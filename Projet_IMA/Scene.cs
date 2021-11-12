@@ -32,9 +32,9 @@ namespace Projet_IMA
 			switch (index)
 			{
 				case 0: return GetSpaceScene(width, height, usePathtracing);
-				case 1: return GetGreenAndRedScene(width, height, usePathtracing);
+				case 1: return GetCornellScene(width, height, usePathtracing);
 				case 2: return GetDeerScene(width, height, usePathtracing);
-				default: return GetGreenAndRedScene(width, height, usePathtracing);
+				default: return GetCornellScene(width, height, usePathtracing);
 			}
 		}
 
@@ -300,7 +300,7 @@ namespace Projet_IMA
 			return scene;
 		}
 		
-		public static Scene GetGreenAndRedScene(int width, int height, bool usePathtracing)
+		public static Scene GetCornellScene(int width, int height, bool usePathtracing)
 		{
 			int depth = (int)(0.5f * width);
 
@@ -410,7 +410,7 @@ namespace Projet_IMA
 			scene.Primitives.Add(new Sphere(
 				new V3(0.5f, 0.7f, 0.3f) * room,
 				sphereSize,
-				new Material() { Albedo = Color.WHITE, Bumpmap = new Texture("lead_bump.jpg"), Relief = 2.0f, Roughness = 0.9f }
+				new Material() { Roughness = 0.9f }
 			));
 
 			scene.Primitives.Add(new Sphere(

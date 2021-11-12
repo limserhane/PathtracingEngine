@@ -178,7 +178,7 @@
 			this.sceneControl.FormattingEnabled = true;
 			this.sceneControl.Items.AddRange(new object[] {
             "Space",
-            "Green and Red",
+            "Cornell",
             "Deer"});
 			this.sceneControl.Location = new System.Drawing.Point(862, 45);
 			this.sceneControl.Name = "sceneControl";

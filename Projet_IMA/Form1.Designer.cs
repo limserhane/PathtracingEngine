@@ -49,6 +49,7 @@
 			// 
 			// startButton
 			// 
+			this.startButton.Enabled = false;
 			this.startButton.Location = new System.Drawing.Point(23, 17);
 			this.startButton.Name = "startButton";
 			this.startButton.Size = new System.Drawing.Size(179, 35);
@@ -64,7 +65,7 @@
 			this.pictureBox1.Location = new System.Drawing.Point(23, 103);
 			this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(560, 390);
+			this.pictureBox1.Size = new System.Drawing.Size(960, 580);
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
 			// 
@@ -82,7 +83,7 @@
 			// 
 			// diffuseBouncesControl
 			// 
-			this.diffuseBouncesControl.Location = new System.Drawing.Point(635, 43);
+			this.diffuseBouncesControl.Location = new System.Drawing.Point(846, 42);
 			this.diffuseBouncesControl.Name = "diffuseBouncesControl";
 			this.diffuseBouncesControl.Size = new System.Drawing.Size(88, 20);
 			this.diffuseBouncesControl.TabIndex = 5;
@@ -94,7 +95,7 @@
 			// 
 			// specularBouncesControl
 			// 
-			this.specularBouncesControl.Location = new System.Drawing.Point(635, 69);
+			this.specularBouncesControl.Location = new System.Drawing.Point(846, 68);
 			this.specularBouncesControl.Name = "specularBouncesControl";
 			this.specularBouncesControl.Size = new System.Drawing.Size(88, 20);
 			this.specularBouncesControl.TabIndex = 6;
@@ -106,7 +107,7 @@
 			// 
 			// sppControl
 			// 
-			this.sppControl.Location = new System.Drawing.Point(635, 17);
+			this.sppControl.Location = new System.Drawing.Point(846, 16);
 			this.sppControl.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -129,7 +130,7 @@
 			// sppLabel
 			// 
 			this.sppLabel.AutoSize = true;
-			this.sppLabel.Location = new System.Drawing.Point(601, 19);
+			this.sppLabel.Location = new System.Drawing.Point(812, 18);
 			this.sppLabel.Name = "sppLabel";
 			this.sppLabel.Size = new System.Drawing.Size(28, 13);
 			this.sppLabel.TabIndex = 8;
@@ -138,7 +139,7 @@
 			// diffuseBouncesLabel
 			// 
 			this.diffuseBouncesLabel.AutoSize = true;
-			this.diffuseBouncesLabel.Location = new System.Drawing.Point(503, 45);
+			this.diffuseBouncesLabel.Location = new System.Drawing.Point(714, 44);
 			this.diffuseBouncesLabel.Name = "diffuseBouncesLabel";
 			this.diffuseBouncesLabel.Size = new System.Drawing.Size(126, 13);
 			this.diffuseBouncesLabel.TabIndex = 9;
@@ -147,7 +148,7 @@
 			// specularBouncesLabel
 			// 
 			this.specularBouncesLabel.AutoSize = true;
-			this.specularBouncesLabel.Location = new System.Drawing.Point(494, 71);
+			this.specularBouncesLabel.Location = new System.Drawing.Point(705, 70);
 			this.specularBouncesLabel.Name = "specularBouncesLabel";
 			this.specularBouncesLabel.Size = new System.Drawing.Size(135, 13);
 			this.specularBouncesLabel.TabIndex = 10;
@@ -166,7 +167,7 @@
 			// sceneLabel
 			// 
 			this.sceneLabel.AutoSize = true;
-			this.sceneLabel.Location = new System.Drawing.Point(859, 24);
+			this.sceneLabel.Location = new System.Drawing.Point(289, 19);
 			this.sceneLabel.Name = "sceneLabel";
 			this.sceneLabel.Size = new System.Drawing.Size(38, 13);
 			this.sceneLabel.TabIndex = 13;
@@ -180,17 +181,18 @@
             "Space",
             "Cornell",
             "Deer"});
-			this.sceneControl.Location = new System.Drawing.Point(862, 45);
+			this.sceneControl.Location = new System.Drawing.Point(292, 40);
 			this.sceneControl.Name = "sceneControl";
 			this.sceneControl.Size = new System.Drawing.Size(167, 21);
 			this.sceneControl.TabIndex = 12;
+			this.sceneControl.SelectedIndexChanged += new System.EventHandler(this.sceneControl_SelectedIndexChanged);
 			// 
 			// pathtracingControl
 			// 
 			this.pathtracingControl.AutoSize = true;
 			this.pathtracingControl.Checked = true;
 			this.pathtracingControl.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.pathtracingControl.Location = new System.Drawing.Point(348, 44);
+			this.pathtracingControl.Location = new System.Drawing.Point(543, 42);
 			this.pathtracingControl.Name = "pathtracingControl";
 			this.pathtracingControl.Size = new System.Drawing.Size(104, 17);
 			this.pathtracingControl.TabIndex = 14;
@@ -205,7 +207,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(1162, 899);
+			this.ClientSize = new System.Drawing.Size(993, 693);
 			this.Controls.Add(this.pathtracingControl);
 			this.Controls.Add(this.sceneLabel);
 			this.Controls.Add(this.sceneControl);

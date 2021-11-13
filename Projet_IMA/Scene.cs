@@ -98,9 +98,9 @@ namespace Projet_IMA
 			if(usePathtracing)
 			{
 				scene.Primitives.Add(new Sphere(
-					new V3(0.5f * width, 0.0f * depth, height + 4196),
-					4200,
-					new Material() { Albedo = Color.WHITE, Emissive = 8.0f }
+					new V3(0.5f * width, 0.0f * depth, height + 7133),
+					7140,
+					new Material() { Albedo = Color.WHITE, Emissive = 5.0f }
 				));
 			}
 			else
@@ -113,21 +113,21 @@ namespace Projet_IMA
 
 			#endregion
 
-			//scene.Primitives.AddRange(Mesh.LoadMesh("deerlow.obj", new V3(0.4f, 0.3f, 0.0f) * room, 8.0f, new Material() { Roughness = 1.0f }));
+			scene.Primitives.AddRange(Mesh.LoadMesh("deerlow.obj", new V3(0.5f, 0.3f, 0.0f) * room, 11.0f, new Material() { Roughness = 1.0f }));
 
 			scene.Primitives.Add(new Sphere(
 				new V3(0.2f, -1.2f, 0.4f) * room,
-				80,
-				new Material() { Texture = new Texture("gold.jpg"), Bumpmap = new Texture("gold_bump.jpg"), Relief = 4.0f}
+				136,
+				new Material() { Texture = new Texture("gold.jpg"), Bumpmap = new Texture("gold_bump.jpg"), Relief = 2.0f}
 			));
 
 			scene.Primitives.Add(new Sphere(
-				new V3(0.9f, 0.8f, 0.8f) * room,
-				80,
+				new V3(0.8f, 0.8f, 0.85f) * room,
+				100,
 				new Material() { Roughness = 0.0f }
 			));
 
-			float paintScale = 0.5f;
+			float paintScale = 0.7f;
 			float paintWidth = 650.0f;
 			float paintHeight = 448.0f;
 			V3 paintPosition = new V3(0.15f, 0.9999f * back, 0.25f) * room;
@@ -200,13 +200,13 @@ namespace Projet_IMA
 			{
 				scene.Primitives.Add(new Sphere(
 					new V3(-1.0f, 0.0f, 3.2f) * room,
-					400,
+					680,
 					new Material() { Emissive = 20.0f }
 				));
 
 				scene.Primitives.Add(new Sphere(
 					new V3(2.0f, 0.0f, 3.2f) * room,
-					200,
+					340,
 					new Material() { Emissive = 15.0f, Texture = new Texture("planets\\sun.jpg") }
 				));
 			}
@@ -226,7 +226,7 @@ namespace Projet_IMA
 
 			#region Spheres
 
-			float sphereSize = 130;
+			float sphereSize = 220;
 
 			scene.Primitives.Add(new Sphere(
 				new V3(-0.1f * width, 0.5f * depth, sphereSize),
@@ -246,7 +246,7 @@ namespace Projet_IMA
 				new Material() { Roughness = 0.0f }
 			));
 
-			float ballSize = 60;
+			float ballSize = 100;
 
 			scene.Primitives.Add(new Sphere(
 				new V3(-0.1f * width, 0.5f * depth - sphereSize - ballSize, ballSize),
@@ -379,14 +379,14 @@ namespace Projet_IMA
 			#region Mirrors
 
 			scene.Primitives.Add(new Sphere(
-				new V3(0.7f * width, depth + 150, 0.6f * height),
-				200,
+				new V3(0.7f * width, depth + 255, 0.6f * height),
+				340,
 				new Material() { Roughness = 0.0f }
 			));
 
 			scene.Primitives.Add(new Sphere(
-				new V3(0.5f * width, 0.3f * depth, -150),
-				200,
+				new V3(0.5f * width, 0.3f * depth, -255),
+				340,
 				new Material() { Roughness = 0.0f }
 			));
 
@@ -394,7 +394,7 @@ namespace Projet_IMA
 
 			#region Spheres
 
-			float sphereSize = 60;
+			float sphereSize = 100;
 
 			scene.Primitives.Add(new Sphere(
 				new V3(0.2f, 0.4f, 0.3f) * room,

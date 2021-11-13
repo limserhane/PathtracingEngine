@@ -17,7 +17,7 @@ namespace Projet_IMA
 		public static int MAX_SPECULAR_BOUNCES = 0; // nombre maximum de rebonds spéculaires avant la fin du rayon
 
 		const int ThreadCount = 6;
-		const int WindowSize = 20;
+		const int WindowSize = 50;
 
 		// --------------------------------------------------------------------------------------
 

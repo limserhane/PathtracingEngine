@@ -56,6 +56,7 @@ namespace Projet_IMA
 
 		private void startButton_Click(object sender, EventArgs e)
 		{
+			Interrupt();
 			Go();
 		}
 
@@ -64,6 +65,11 @@ namespace Projet_IMA
 			sppControl.Enabled = pathtracingControl.Checked;
 			diffuseBouncesControl.Enabled = pathtracingControl.Checked;
 			specularBouncesControl.Enabled = pathtracingControl.Checked;
+		}
+
+		private void sceneControl_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			startButton.Enabled = sceneControl.SelectedIndex != -1;
 		}
 	}
 }

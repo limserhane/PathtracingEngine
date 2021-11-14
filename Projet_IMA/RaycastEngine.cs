@@ -21,7 +21,7 @@ namespace Projet_IMA
 			Color color = first == null ? 
 				scene.BackgroundColor
 				:
-				LightingEngine.ComputeDirectLighting(-cameraDirection, first, scene); // take account of direct lighting from lights
+				LightingEngine.ComputeDirectLighting(-cameraDirection, first, scene);
 
 			return color;
 		}
@@ -62,7 +62,7 @@ namespace Projet_IMA
 
 			Color pointColor = material.GetColor(normalizedU, normalizedV);
 
-			Color emitted = material.Emissive * pointColor; // if surface is a emitting light
+			Color emitted = material.Emissive * pointColor; // if surface is emitting light
 
 			V3 normal = material.GetBumpedNormal(primitive, point, u, v, normalizedU, normalizedV);
 
@@ -73,7 +73,7 @@ namespace Projet_IMA
 				{
 					return emitted; 
 				}
-				inDirection = -GetRandomDirectionInHemisphere(normal); // diffuse bounce : assume all probabilities are equal = distribution uniforme // origin.Primitive.GetNormal(origin.Point) ?
+				inDirection = - Math.GetRandomDirectionInHemisphere(normal); // diffuse bounce : assume all probabilities are equal = distribution uniforme
 				diffuseBounces--;
 			}
 			else
@@ -98,29 +98,6 @@ namespace Projet_IMA
 			Color indirect = LightingEngine.ComputeIndirectLighting(inDirection, inLighting, outDirection, pointColor, normal, material);
 
 			return emitted + indirect; // rendering equation
-		}
-
-		static public V3 GetRandomDirectionInSphere()
-		{
-			float theta = 2 * Math.PI * Math.RandP(1.0f);
-			float phi = Math.Acosf(Math.RandNP(1.0f));
-
-			V3 random = new V3(
-				Math.Cosf(theta) * Math.Sinf(phi),
-				Math.Sinf(theta) * Math.Sinf(phi),
-				Math.Cosf(phi)
-			);
-
-			return random;
-		}
-		static public V3 GetRandomDirectionInHemisphere(V3 top)
-		{
-			V3 random = GetRandomDirectionInSphere();
-
-			if (V3.Dot(random, top) < 0) // vector must be point the same direction as the normal
-				random = -random;
-
-			return random;
 		}
 	}
 }

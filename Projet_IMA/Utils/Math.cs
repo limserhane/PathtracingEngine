@@ -51,5 +51,27 @@ namespace Projet_IMA
 		static public float RandNP(float v) {return ((float)Ran.NextDouble() - 0.5f) * 2 * v; }
 		static public float RandP(float v) { return ((float)Ran.NextDouble()) * v; }
 
+		static public V3 GetRandomDirectionInSphere()
+		{
+			float theta = 2 * Math.PI * Math.RandP(1.0f);
+			float phi = Math.Acosf(Math.RandNP(1.0f));
+
+			V3 random = new V3(
+				Math.Cosf(theta) * Math.Sinf(phi),
+				Math.Sinf(theta) * Math.Sinf(phi),
+				Math.Cosf(phi)
+			);
+
+			return random;
+		}
+		static public V3 GetRandomDirectionInHemisphere(V3 top)
+		{
+			V3 random = GetRandomDirectionInSphere();
+
+			if (V3.Dot(random, top) < 0) // vector must be point the same direction as the normal
+				random = -random;
+
+			return random;
+		}
 	}
 }
